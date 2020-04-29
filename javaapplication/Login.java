@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 
+
 /**
  *
  * @author niraj
@@ -80,6 +81,7 @@ public class Login extends javax.swing.JFrame {
         }
        return true;
     }
+   
         
     /**
      * This method is called from within the constructor to initialize the form.
@@ -99,6 +101,7 @@ public class Login extends javax.swing.JFrame {
         txtid = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -152,6 +155,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 120, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication/icons/5964548-256.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 70, 230, 330));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 610, 420));
 
@@ -218,6 +225,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtname;

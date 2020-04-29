@@ -99,6 +99,7 @@ public class Registration extends javax.swing.JFrame {
         txtothers = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -137,6 +138,11 @@ public class Registration extends javax.swing.JFrame {
         jCheckBox1.setFont(new java.awt.Font("URW Palladio L", 0, 17)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(241, 247, 248));
         jCheckBox1.setText("Arts & Humanities");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
         jCheckBox2.setFont(new java.awt.Font("URW Palladio L", 0, 17)); // NOI18N
@@ -147,6 +153,11 @@ public class Registration extends javax.swing.JFrame {
         jCheckBox4.setFont(new java.awt.Font("URW Palladio L", 0, 17)); // NOI18N
         jCheckBox4.setForeground(new java.awt.Color(247, 248, 248));
         jCheckBox4.setText("Computer Science");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         jCheckBox5.setFont(new java.awt.Font("URW Palladio L", 0, 17)); // NOI18N
@@ -217,6 +228,9 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, -1, -1));
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication/icons/4341272-256.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 30, -1, 360));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 610, 430));
 
         pack();
@@ -247,6 +261,14 @@ public class Registration extends javax.swing.JFrame {
         this.hide();
         lg.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,6 +323,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;

@@ -84,6 +84,14 @@ public class Technology extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(242, 246, 247));
         jLabel2.setText("Events");
+        jLabel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel2MouseDragged(evt);
+            }
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabel2MouseMoved(evt);
+            }
+        });
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -238,91 +246,7 @@ public class Technology extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        Connection con;
-        PreparedStatement pst;
-        ResultSet rs;
-        try {
-            String L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,L15,L16;
-            L1 = l1.getText();
-            L2 = l2.getText();
-            L3 = l3.getText();
-            L4 = l4.getText();
-            L5 = l5.getText();
-            L6 = l6.getText();
-            L7 = l7.getText();
-            L8 = l8.getText();
-            L9 = l9.getText();
-            L10 = l10.getText();
-            L11 = l11.getText();
-            L12 = l12.getText();
-            L13 = l13.getText();
-            L14 = l14.getText();
-            L15 = l15.getText();
-            L16 = l16.getText();
-                   
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/javaProject","root","");
-            String sql = "select * from Technology where id=1";
-            pst = con.prepareStatement(sql);
-            rs = pst.executeQuery();
 
-            while(rs.next()){
-            String a = rs.getString("EventName");
-            l1.setText(a);
-            String b = rs.getString("EventTime");
-            l2.setText(b);
-            String c = rs.getString("EventDate");
-            l3.setText(c);
-            String d = rs.getString("EventVenue");
-            l4.setText(d);
-            
-            String sql1 = "select * from Technology where id=2";
-            pst = con.prepareStatement(sql1);
-            rs = pst.executeQuery();
-            while(rs.next()){
-            String e = rs.getString("EventName");
-            l5.setText(e);
-            String f = rs.getString("EventTime");
-            l6.setText(f);
-            String g = rs.getString("EventDate");
-            l7.setText(g);
-            String h = rs.getString("EventVenue");
-            l8.setText(h);
-            }
-            String sql2 = "select * from Technology where id=3";
-            pst = con.prepareStatement(sql2);
-            rs = pst.executeQuery();
-            while(rs.next()){
-            String e = rs.getString("EventName");
-            l9.setText(e);
-            String f = rs.getString("EventTime");
-            l10.setText(f);
-            String g = rs.getString("EventDate");
-            l11.setText(g);
-            String h = rs.getString("EventVenue");
-            l12.setText(h);
-            }
-            String sql3 = "select * from Technology where id=4";
-            pst = con.prepareStatement(sql3);
-            rs = pst.executeQuery();
-            while(rs.next()){
-            String e = rs.getString("EventName");
-            l13.setText(e);
-            String f = rs.getString("EventTime");
-            l14.setText(f);
-            String g = rs.getString("EventDate");
-            l15.setText(g);
-            String h = rs.getString("EventVenue");
-            l16.setText(h);
-            }
-
-            }
-        
-        }
-        catch (Exception e){
-        JOptionPane.showMessageDialog(null, e);
-        }
 
     }//GEN-LAST:event_jLabel2MouseClicked
 
@@ -433,6 +357,100 @@ public class Technology extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jLabel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseDragged
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel2MouseDragged
+
+    private void jLabel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseMoved
+        // TODO add your handling code here:
+        Connection con;
+        PreparedStatement pst;
+        ResultSet rs;
+        try {
+            String L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,L15,L16;
+            L1 = l1.getText();
+            L2 = l2.getText();
+            L3 = l3.getText();
+            L4 = l4.getText();
+            L5 = l5.getText();
+            L6 = l6.getText();
+            L7 = l7.getText();
+            L8 = l8.getText();
+            L9 = l9.getText();
+            L10 = l10.getText();
+            L11 = l11.getText();
+            L12 = l12.getText();
+            L13 = l13.getText();
+            L14 = l14.getText();
+            L15 = l15.getText();
+            L16 = l16.getText();
+                   
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/javaProject","root","");
+            String sql = "select * from Technology where id=1";
+            pst = con.prepareStatement(sql);
+            rs = pst.executeQuery();
+
+            while(rs.next()){
+            String a = rs.getString("EventName");
+            l1.setText(a);
+            String b = rs.getString("EventTime");
+            l2.setText(b);
+            String c = rs.getString("EventDate");
+            l3.setText(c);
+            String d = rs.getString("EventVenue");
+            l4.setText(d);
+            
+            String sql1 = "select * from Technology where id=2";
+            pst = con.prepareStatement(sql1);
+            rs = pst.executeQuery();
+            while(rs.next()){
+            String e = rs.getString("EventName");
+            l5.setText(e);
+            String f = rs.getString("EventTime");
+            l6.setText(f);
+            String g = rs.getString("EventDate");
+            l7.setText(g);
+            String h = rs.getString("EventVenue");
+            l8.setText(h);
+            }
+            String sql2 = "select * from Technology where id=3";
+            pst = con.prepareStatement(sql2);
+            rs = pst.executeQuery();
+            while(rs.next()){
+            String e = rs.getString("EventName");
+            l9.setText(e);
+            String f = rs.getString("EventTime");
+            l10.setText(f);
+            String g = rs.getString("EventDate");
+            l11.setText(g);
+            String h = rs.getString("EventVenue");
+            l12.setText(h);
+            }
+            String sql3 = "select * from Technology where id=4";
+            pst = con.prepareStatement(sql3);
+            rs = pst.executeQuery();
+            while(rs.next()){
+            String e = rs.getString("EventName");
+            l13.setText(e);
+            String f = rs.getString("EventTime");
+            l14.setText(f);
+            String g = rs.getString("EventDate");
+            l15.setText(g);
+            String h = rs.getString("EventVenue");
+            l16.setText(h);
+            }
+
+            }
+        
+        }
+        catch (Exception e){
+        JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_jLabel2MouseMoved
 
     /**
      * @param args the command line arguments

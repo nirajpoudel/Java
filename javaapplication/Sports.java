@@ -73,6 +73,11 @@ public class Sports extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(59, 144, 246));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel1MouseMoved(evt);
+            }
+        });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("URW Palladio L", 0, 20)); // NOI18N
@@ -167,6 +172,11 @@ public class Sports extends javax.swing.JFrame {
         jPanel1.add(l16, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 343, -1, -1));
 
         jButton1.setText("Book");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 379, -1, -1));
 
         jButton2.setText("Delete");
@@ -202,12 +212,27 @@ public class Sports extends javax.swing.JFrame {
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 237, -1, -1));
 
         jButton6.setText("Book");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, -1, -1));
 
         jButton7.setText("Book");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 237, -1, -1));
 
         jButton8.setText("Book");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 379, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -363,6 +388,48 @@ public class Sports extends javax.swing.JFrame {
 
     private void jLabel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseMoved
         // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel2MouseMoved
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Connection con;
+        PreparedStatement pst;
+        int yesNo = JOptionPane.showConfirmDialog(null, "Are you sure you want to book?","Book",JOptionPane.YES_NO_OPTION);
+        if(yesNo == JOptionPane.YES_OPTION){
+  
+            try {
+                String L1,L2,L3,L4;
+                L1 = l1.getText();
+                L2 = l2.getText();
+                L3 = l3.getText();
+                L4 = l4.getText();                
+                
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/javaProject","root","");
+                String  query1 = "delete from Sports where id=1";
+                pst = con.prepareStatement(query1);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Booking Successful");
+                System.out.print("is successfully booked.");
+             
+                pst = con.prepareStatement("insert into MyBookings(EventName,EventTime,EventDate,EventVenue)values(?,?,?,?)");
+                pst.setString(1, L1);
+                pst.setString(2, L2); 
+                pst.setString(3, L3);
+                pst.setString(4, L4);
+                pst.executeUpdate();   
+              
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    } 
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
+        // TODO add your handling code here:
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
@@ -448,8 +515,118 @@ public class Sports extends javax.swing.JFrame {
         catch (Exception e){
         JOptionPane.showMessageDialog(null, e);
         }
+    }//GEN-LAST:event_jPanel1MouseMoved
 
-    }//GEN-LAST:event_jLabel2MouseMoved
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Connection con;
+        PreparedStatement pst;
+        int yesNo = JOptionPane.showConfirmDialog(null, "Are you sure you want to book?","Book",JOptionPane.YES_NO_OPTION);
+        if(yesNo == JOptionPane.YES_OPTION){
+  
+            try {
+                String L1,L2,L3,L4;
+                L1 = l1.getText();
+                L2 = l2.getText();
+                L3 = l3.getText();
+                L4 = l4.getText();                
+                
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/javaProject","root","");
+                String  query1 = "delete from Sports where id=2";
+                pst = con.prepareStatement(query1);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Booking Successful");
+                System.out.print("is successfully booked.");
+             
+                pst = con.prepareStatement("insert into MyBookings(EventName,EventTime,EventDate,EventVenue)values(?,?,?,?)");
+                pst.setString(1, L1);
+                pst.setString(2, L2); 
+                pst.setString(3, L3);
+                pst.setString(4, L4);
+                pst.executeUpdate();   
+              
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    } 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        Connection con;
+        PreparedStatement pst;
+        int yesNo = JOptionPane.showConfirmDialog(null, "Are you sure you want to book?","Book",JOptionPane.YES_NO_OPTION);
+        if(yesNo == JOptionPane.YES_OPTION){
+  
+            try {
+                String L1,L2,L3,L4;
+                L1 = l1.getText();
+                L2 = l2.getText();
+                L3 = l3.getText();
+                L4 = l4.getText();                
+                
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/javaProject","root","");
+                String  query1 = "delete from Sports where id=3";
+                pst = con.prepareStatement(query1);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Booking Successful");
+                System.out.print("is successfully booked.");
+             
+                pst = con.prepareStatement("insert into MyBookings(EventName,EventTime,EventDate,EventVenue)values(?,?,?,?)");
+                pst.setString(1, L1);
+                pst.setString(2, L2); 
+                pst.setString(3, L3);
+                pst.setString(4, L4);
+                pst.executeUpdate();   
+              
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    } 
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        Connection con;
+        PreparedStatement pst;
+        int yesNo = JOptionPane.showConfirmDialog(null, "Are you sure you want to book?","Book",JOptionPane.YES_NO_OPTION);
+        if(yesNo == JOptionPane.YES_OPTION){
+  
+            try {
+                String L1,L2,L3,L4;
+                L1 = l1.getText();
+                L2 = l2.getText();
+                L3 = l3.getText();
+                L4 = l4.getText();                
+                
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/javaProject","root","");
+                String  query1 = "delete from Sports where id=4";
+                pst = con.prepareStatement(query1);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Booking Successful");
+                System.out.print("is successfully booked.");
+             
+                pst = con.prepareStatement("insert into MyBookings(EventName,EventTime,EventDate,EventVenue)values(?,?,?,?)");
+                pst.setString(1, L1);
+                pst.setString(2, L2); 
+                pst.setString(3, L3);
+                pst.setString(4, L4);
+                pst.executeUpdate();   
+              
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Entertainment.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    } 
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

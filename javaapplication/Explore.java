@@ -110,6 +110,11 @@ public class Explore extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(52, 144, 246));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel1MouseMoved(evt);
+            }
+        });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("URW Palladio L", 0, 20)); // NOI18N
@@ -134,6 +139,11 @@ public class Explore extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(59, 144, 246));
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel2MouseMoved(evt);
+            }
+        });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         l38.setForeground(new java.awt.Color(249, 250, 250));
@@ -488,6 +498,23 @@ public class Explore extends javax.swing.JFrame {
 
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
         // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel1MouseMoved
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Culture ac = new Culture();
+        this.hide();
+        ac.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jPanel1MouseMoved
+
+    private void jPanel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseMoved
+        // TODO add your handling code here:
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
@@ -721,14 +748,7 @@ public class Explore extends javax.swing.JFrame {
         catch (Exception e){
         JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jLabel1MouseMoved
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        Culture ac = new Culture();
-        this.hide();
-        ac.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jPanel2MouseMoved
 
     /**
      * @param args the command line arguments

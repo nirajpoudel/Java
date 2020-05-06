@@ -49,6 +49,11 @@ public class Profile extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(59, 144, 246));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel1MouseMoved(evt);
+            }
+        });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("URW Palladio L", 0, 20)); // NOI18N
@@ -122,6 +127,11 @@ public class Profile extends javax.swing.JFrame {
 
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
         // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel1MouseMoved
+
+    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
+        // TODO add your handling code here:
         Connection con;
         PreparedStatement pst;
         ResultSet rs;
@@ -149,7 +159,7 @@ public class Profile extends javax.swing.JFrame {
         catch (Exception e){
         JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jLabel1MouseMoved
+    }//GEN-LAST:event_jPanel1MouseMoved
 
     /**
      * @param args the command line arguments

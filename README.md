@@ -1,6 +1,6 @@
 # Java
 
-All the projects related to java.
+This is the event management system developed using Java in Netbeans Ide.
 
 The screenshot of the projects are attached below.
 

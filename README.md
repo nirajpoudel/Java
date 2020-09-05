@@ -1,6 +1,6 @@
 # Java
 
-This is the event management system developed using Java in Netbeans Ide.
+This is the event management system developed using Java in Netbeans Ide. The complete description of this project can be found in https://github.com/nirajpoudel18/Java/blob/master/PrincipleOfProgramming.odt
 
 ## Task Description 
 

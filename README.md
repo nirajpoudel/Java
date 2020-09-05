@@ -4,7 +4,7 @@ All the projects related to java.
 
 The screenshot of the projects are attached below.
 
-<img src = "https://user-images.githubusercontent.com/59787504/92300261-2fc8ee00-ef79-11ea-9afc-323e035f8abc.png">
+<img src = "https://user-images.githubusercontent.com/59787504/92300261-2fc8ee00-ef79-11ea-9afc-323e035f8abc.png" height="200" width="200">
 
 <img src = "https://user-images.githubusercontent.com/59787504/92300236-1b84f100-ef79-11ea-9bd0-0d7a085c488c.png">
 
